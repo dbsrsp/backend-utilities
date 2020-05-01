@@ -1,0 +1,20 @@
+{
+  "name": "backend-utilities",
+  "version": "1.0.0",
+  "description": "backend service utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbsrsp/backend-utilities.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbsrsp/backend-utilities/issues"
+  },
+  "homepage": "https://github.com/dbsrsp/backend-utilities#readme"
+}
