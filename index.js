@@ -6,6 +6,10 @@ class ErrorResponse {
         this.code = code
         this.message = message
     }
+
+    toString() {
+        return JSON.stringify({ code: this.code, message: this.message })
+    }
 }
 
 const ServiceHost = {
