@@ -1,3 +1,5 @@
+const RequestValidationMiddleware = require('./RequestValidationMiddleware')
+
 class ErrorResponse {
     code = ''
     message = ''
@@ -49,5 +51,6 @@ const ServiceHost = {
 
 module.exports = {
     ErrorResponse,
-    ServiceHost
+    ServiceHost,
+    RequestValidationMiddleware
 }
