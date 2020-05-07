@@ -18,5 +18,6 @@
   },
   "homepage": "https://github.com/dbsrsp/backend-utilities#readme",
   "dependencies": {
+    "moment": "^2.25.3"
   }
 }
