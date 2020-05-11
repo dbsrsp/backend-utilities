@@ -31,7 +31,7 @@ const ServiceHost = {
         return 'http://' + this[`SERVICE_${serviceName}_HOST`] + ':' + this[`SERVICE_${serviceName}_PORT`]
     },
     getamp: function() {
-        return 'amqp://' + process.env.RABBITMQ_USER + ':' + process.env.RABBITMQ_PASS + '@' +  this[`SERVICE_RABBITMQ_HOST`] + ':' + this[`SERVICE_RABBITMQ_PORT`]
+        return 'amqp://' + process.env.RABBITMQ_USER + ':' + process.env.RABBITMQ_PASS + '@' +  this[`SERVICE_RABBITMQ_HOST`] + ':5672' 
     }
 }
 
