@@ -1,23 +1,12 @@
 {
   "name": "backend-utilities",
-  "version": "1.0.0",
-  "description": "backend service utilities",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dbsrsp/backend-utilities.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dbsrsp/backend-utilities/issues"
-  },
-  "homepage": "https://github.com/dbsrsp/backend-utilities#readme",
   "dependencies": {
+    "knex": "^0.21.1",
     "moment": "^2.25.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2"
   }
 }
