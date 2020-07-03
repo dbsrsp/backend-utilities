@@ -1,5 +1,6 @@
 const RequestValidationMiddleware = require('./RequestValidationMiddleware')
 const ServiceHost = require('./ServiceHost')
+const { InsertActivityLog } = require('./ActivityLogService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -34,5 +35,6 @@ module.exports = {
     ErrorResponse,
     ServiceHost,
     RequestValidationMiddleware,
-    compareSort
+    compareSort,
+    InsertActivityLog
 }
