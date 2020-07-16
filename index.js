@@ -4,6 +4,7 @@ const { InsertActivityLog } = require('./ActivityLogService')
 const { GetRiderDetailsInfoByUserIds } = require('./RiderService')
 const { GetDriverInfoByUserIds } = require('./DriverService')
 const { GetUserInfoByUserIds } = require('./UserService')
+const { GetProductListByBrandId } = require('./ProductService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -42,5 +43,6 @@ module.exports = {
     InsertActivityLog,
     GetRiderDetailsInfoByUserIds,
     GetDriverInfoByUserIds,
-    GetUserInfoByUserIds
+    GetUserInfoByUserIds,
+    GetProductListByBrandId
 }
