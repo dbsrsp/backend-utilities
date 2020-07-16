@@ -5,6 +5,7 @@ const { GetRiderDetailsInfoByUserIds } = require('./RiderService')
 const { GetDriverInfoByUserIds } = require('./DriverService')
 const { GetUserInfoByUserIds } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
+const { GetGeofencePricing } = require('./GeofenceService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -44,5 +45,6 @@ module.exports = {
     GetRiderDetailsInfoByUserIds,
     GetDriverInfoByUserIds,
     GetUserInfoByUserIds,
-    GetProductListByBrandId
+    GetProductListByBrandId,
+    GetGeofencePricing
 }
