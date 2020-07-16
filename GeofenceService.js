@@ -11,7 +11,7 @@ const GetGeofencePricing = async(pickupLocation, dropoffLocation, brandId) => {
 
         return response.data
     } catch(err) {
-        console.log(err)
+        console.log(err.response)
         throw new Error(err.error)
     }
 }
