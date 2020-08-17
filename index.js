@@ -2,10 +2,10 @@ const RequestValidationMiddleware = require('./RequestValidationMiddleware')
 const ServiceHost = require('./ServiceHost')
 const { InsertActivityLog } = require('./ActivityLogService')
 const { GetRiderDetailsInfoByUserIds } = require('./RiderService')
-const { GetDriverInfoByUserIds } = require('./DriverService')
+const { GetDriverInfoByUserIds, GetDriverDetailsByIds } = require('./DriverService')
 const { GetUserInfoByUserIds } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
-const { GetGeofencePricing } = require('./GeofenceService')
+const { GetGeofencePricing, RemoveFromQueue } = require('./GeofenceService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -46,5 +46,7 @@ module.exports = {
     GetDriverInfoByUserIds,
     GetUserInfoByUserIds,
     GetProductListByBrandId,
-    GetGeofencePricing
+    GetGeofencePricing,
+    RemoveFromQueue,
+    GetDriverDetailsByIds
 }

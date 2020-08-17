@@ -11,4 +11,19 @@ const GetDriverInfoByUserIds = async(userIds) => {
     }
 }
 
+const GetDriverDetailsByIds = async(ids) => {
+    try {
+        const response = await axios.post(ServiceHost.get('driver') + '/api/driver/details/search', 
+        {
+            ids
+        })
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.data.error)
+    }
+}
+
+module.exports.GetDriverDetailsByIds = GetDriverDetailsByIds
+
 module.exports.GetDriverInfoByUserIds = GetDriverInfoByUserIds

@@ -16,4 +16,16 @@ const GetGeofencePricing = async(pickupLocation, dropoffLocation, brandId) => {
     }
 }
 
+const RemoveFromQueue = async(driverId) => {
+    try {
+        const response = await axios.put(ServiceHost.get('geofence') + '/api/staging.exit/' + driverId)
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.response.data.message)
+    }
+}
+
 module.exports.GetGeofencePricing = GetGeofencePricing
+
+module.exports.RemoveFromQueue = RemoveFromQueue
