@@ -26,6 +26,18 @@ const RemoveFromQueue = async(driverId) => {
     }
 }
 
+const GetAllDriversQueueInStagingOfAirport = async(id) => {
+    try {
+        const response = await axios.get(ServiceHost.get('geofence') + '/api/staging.get.all.queue.drivers.by.airport/' + id)
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.response.data.message)
+    }
+}
+
 module.exports.GetGeofencePricing = GetGeofencePricing
 
 module.exports.RemoveFromQueue = RemoveFromQueue
+
+module.exports.GetAllDriversQueueInStagingOfAirport = GetAllDriversQueueInStagingOfAirport
