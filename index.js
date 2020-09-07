@@ -7,6 +7,7 @@ const { GetUserInfoByUserIds } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
 const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirport } = require('./GeofenceService')
 const { GetQuotationDetails } = require('./QuotationService')
+const { createTripAsap } = require('./TripService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -51,5 +52,6 @@ module.exports = {
     RemoveFromQueue,
     GetDriverDetailsByIds,
     GetAllDriversQueueInStagingOfAirport,
-    GetQuotationDetails
+    GetQuotationDetails,
+    createTripAsap
 }
