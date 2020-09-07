@@ -1,3 +1,5 @@
+const axios = require('axios').default
+
 const GetQuotationDetails = async(quotationId) => {
     try {
         const response = await axios.get(ServiceHost.get('quotation') + '/api/quotation.get.detail.by.id/' + quotationId)
