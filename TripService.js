@@ -3,7 +3,7 @@ const serviceHost = require('./ServiceHost')
 
 const createTripAsap = async(bookingDetails) => {
     try {
-        const response = await axios.post(serviceHost.get('trip') + '/trip.create.asap', { ...bookingDetails })
+        const response = await axios.post(serviceHost.get('trip') + '/api/trip.create.asap', bookingDetails)
 
         return response.data
     } catch(err) {
