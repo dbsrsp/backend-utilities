@@ -11,4 +11,14 @@ const createTripAsap = async(bookingDetails) => {
     }
 }
 
+module.exports.sendTrip = sendTrip = async({ tripId, driverId }, userId) => {
+    try {
+        const response = await axios.post(serviceHost.get('trip') + `/api/trip/send?user=${userId}`, { tripId, driverId })
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.data.error.message)
+    }
+}
+
 module.exports.createTripAsap = createTripAsap
