@@ -11,4 +11,16 @@ const createBookingAsap = async(asapDetails) => {
     }
 }
 
+const markReadyToGo = async(bookingId) => {
+    try {
+        const response = await axios.put(serviceHost.get('booking') + '/api/booking.readytogo/' + bookingId)
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.data.error)
+    }
+}
+
 module.exports.createBookingAsap = createBookingAsap
+
+module.exports.markReadyToGo = markReadyToGo
