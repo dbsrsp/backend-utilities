@@ -17,5 +17,17 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.data.error.message)
         }
+    },
+    createDriverPayoutSummary: async({ week, year}) => {
+        try {
+            const response = await axios.post(ServiceHost.get('payment') + '/service/driver.payout.summary.create', {
+                week,
+                year
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error.message)
+        }
     }
 }
