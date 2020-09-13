@@ -10,6 +10,7 @@ const { GetQuotationDetails } = require('./QuotationService')
 const { createTripAsap, sendTrip } = require('./TripService')
 const { createBookingAsap, markReadyToGo } = require('./BookingService')
 const { notificationService } = require('./NotificationService')
+const { paymentService } = require('./PaymentService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -59,5 +60,6 @@ module.exports = {
     getOnlineDrivers,
     sendTrip,
     notificationService,
-    getAllDrivers
+    getAllDrivers,
+    paymentService
 }
