@@ -37,3 +37,13 @@ module.exports.getOnlineDrivers = getOnlineDrivers = async() => {
 module.exports.GetDriverDetailsByIds = GetDriverDetailsByIds
 
 module.exports.GetDriverInfoByUserIds = GetDriverInfoByUserIds
+
+module.exports.getAllDrivers = getAllDrivers = async() => {
+    try {
+        const response = await axios.get(ServiceHost.get('driver') + '/api/driver.get.all.drivers')
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.data.error.message)
+    }
+}
