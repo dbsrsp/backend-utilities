@@ -9,6 +9,7 @@ const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirpor
 const { GetQuotationDetails } = require('./QuotationService')
 const { createTripAsap, sendTrip } = require('./TripService')
 const { createBookingAsap, markReadyToGo } = require('./BookingService')
+const { notificationService } = require('./NotificationService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -23,7 +24,6 @@ class ErrorResponse {
     }
 }
 
-
 const compareSort = (property) => {
     return (a, b) => {
         const itemA =  a[property]
@@ -37,7 +37,6 @@ const compareSort = (property) => {
         return comparison
     }
 }
-
 
 module.exports = {
     ErrorResponse,
@@ -58,5 +57,6 @@ module.exports = {
     createBookingAsap,
     markReadyToGo,
     getOnlineDrivers,
-    sendTrip
+    sendTrip,
+    notificationService
 }
