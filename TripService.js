@@ -22,3 +22,13 @@ module.exports.sendTrip = sendTrip = async({ tripId, driverId }, userId) => {
 }
 
 module.exports.createTripAsap = createTripAsap
+
+module.exports.getTripDetails = getTripDetails = async(tripId) => {
+    try {
+        const response = await axios.get(serviceHost.get('trip') + `/api/trip/${tripId}/full`)
+
+        return response.data
+    } catch(err) {
+        throw new Error(err.data.error.message)
+    }
+}
