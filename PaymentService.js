@@ -2,7 +2,7 @@ const ServiceHost = require('./ServiceHost')
 const axios = require('axios').default
 
 module.exports.paymentService = paymentService = {
-    insertPayout: async({ tripId, week, year, driverId, fare, tip }) => {
+    insertPayout: async({ tripId, week, year, driverId, fare, tip, cancellationFee }) => {
         try {
             const response = await axios.post(ServiceHost.get('payment') + '/service/driver.payout.insert', {
                 tripId,
@@ -10,7 +10,8 @@ module.exports.paymentService = paymentService = {
                 year,
                 driverId,
                 fare,
-                tip
+                tip,
+                cancellationFee
             })
 
             return response.data
