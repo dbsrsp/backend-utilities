@@ -8,7 +8,7 @@ const { GetProductListByBrandId } = require('./ProductService')
 const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirport } = require('./GeofenceService')
 const { GetQuotationDetails } = require('./QuotationService')
 const { createTripAsap, sendTrip, getTripDetails } = require('./TripService')
-const { createBookingAsap, markReadyToGo } = require('./BookingService')
+const { createBookingAsap, markReadyToGo, bookingService } = require('./BookingService')
 const { notificationService } = require('./NotificationService')
 const { paymentService } = require('./PaymentService')
 class ErrorResponse {
@@ -62,5 +62,6 @@ module.exports = {
     notificationService,
     getAllDrivers,
     paymentService,
-    getTripDetails
+    getTripDetails,
+    bookingService
 }

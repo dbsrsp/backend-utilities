@@ -24,3 +24,15 @@ const markReadyToGo = async(bookingId) => {
 module.exports.createBookingAsap = createBookingAsap
 
 module.exports.markReadyToGo = markReadyToGo
+
+module.exports.bookingService = bookingService = {
+    getAllBookingsByTripId: async(tripId) => {
+        try {
+            const response = await axios.get(serviceHost.get('booking') + '/api/booking.get.all.by.tripId/' + tripId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error.message)
+        }
+    }
+}
