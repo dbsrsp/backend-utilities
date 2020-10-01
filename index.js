@@ -11,6 +11,7 @@ const { createTripAsap, sendTrip, getTripDetails } = require('./TripService')
 const { createBookingAsap, markReadyToGo, bookingService } = require('./BookingService')
 const { notificationService } = require('./NotificationService')
 const { paymentService } = require('./PaymentService')
+const { emailService } = require('./emailService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -63,5 +64,6 @@ module.exports = {
     getAllDrivers,
     paymentService,
     getTripDetails,
-    bookingService
+    bookingService,
+    emailService
 }
