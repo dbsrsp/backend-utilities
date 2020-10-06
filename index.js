@@ -3,7 +3,7 @@ const ServiceHost = require('./ServiceHost')
 const { InsertActivityLog } = require('./ActivityLogService')
 const { GetRiderDetailsInfoByUserIds } = require('./RiderService')
 const { GetDriverInfoByUserIds, GetDriverDetailsByIds, getOnlineDrivers, getAllDrivers } = require('./DriverService')
-const { GetUserInfoByUserIds } = require('./UserService')
+const { GetUserInfoByUserIds, userService } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
 const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirport } = require('./GeofenceService')
 const { GetQuotationDetails } = require('./QuotationService')
@@ -65,5 +65,6 @@ module.exports = {
     paymentService,
     getTripDetails,
     bookingService,
-    emailService
+    emailService,
+    userService
 }

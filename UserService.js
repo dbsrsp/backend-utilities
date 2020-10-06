@@ -12,3 +12,16 @@ const GetUserInfoByUserIds = async(userIds) => {
 }
 
 module.exports.GetUserInfoByUserIds = GetUserInfoByUserIds
+
+
+module.exports.userService = userService = {
+    enableDriver: async(userId) => {
+        try {
+            const response = await axios.put(ServiceHost.get('user') + '/api/user/enable.driver/' + userId)
+    
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error)
+        }
+    }
+}
