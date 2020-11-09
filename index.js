@@ -12,6 +12,7 @@ const { createBookingAsap, markReadyToGo, bookingService } = require('./BookingS
 const { notificationService } = require('./NotificationService')
 const { paymentService } = require('./PaymentService')
 const { emailService } = require('./emailService')
+const { dispatchService } = require('./dispatchService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -66,5 +67,6 @@ module.exports = {
     getTripDetails,
     bookingService,
     emailService,
-    userService
+    userService,
+    dispatchService
 }
