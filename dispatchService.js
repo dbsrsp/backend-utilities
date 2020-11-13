@@ -18,5 +18,14 @@ module.exports.dispatchService = dispatchService = {
         } catch(err) {
             throw new Error(err.data.error.message)
         }
+    },
+    acceptTrip: async(tripId) => {
+        try {
+            let response = await axios.put(ServiceHost.get('dispatch') + `/api/auto.dispatch/${tripId}/accept`, {})
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error.message)
+        }
     }
 } 
