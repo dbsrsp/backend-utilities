@@ -21,10 +21,11 @@ module.exports.dispatchService = dispatchService = {
     },
     acceptTrip: async(tripId) => {
         try {
-            let response = await axios.put(ServiceHost.get('dispatch') + `/api/auto.dispatch/${tripId}/accept`, {})
+            let response = await axios.put(ServiceHost.get('dispatch') + `/api/auto.dispatch/${tripId}/accept`)
 
             return response.data
         } catch(err) {
+            console.log(err)
             throw new Error(err.data.error.message)
         }
     }
