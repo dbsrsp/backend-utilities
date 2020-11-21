@@ -36,11 +36,10 @@ module.exports.getTripDetails = getTripDetails = async(tripId) => {
 module.exports.TripService = TripService = {
     updateVehicle: async(data) => {
         try {
-            const response = await axios.put(serviceHost.get('trip'), '/service/vehicle', data)
+            const response = await axios.put(serviceHost.get('trip') + '/service/vehicle', data)
 
             return response.data
         } catch(err) {
-            console.log(err.response)
             throw new Error(err.response.data.message)
         }
     }
