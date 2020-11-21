@@ -40,6 +40,7 @@ module.exports.TripService = TripService = {
 
             return response.data
         } catch(err) {
+            console.log(err.response)
             throw new Error(err.response.data.message)
         }
     }
