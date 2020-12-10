@@ -42,5 +42,14 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getDriverInfoByTripIds: async(data) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/api/trip.get.driverinfo', data)
+            
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
