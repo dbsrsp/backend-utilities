@@ -23,5 +23,15 @@ module.exports.userService = userService = {
         } catch(err) {
             throw new Error(err.data.error)
         }
+    },
+    getScopes: async(userId) => {
+        try {
+            const response = await axios.get(ServiceHost.get('user') + `/service/admin/${userId}/scopes`)
+    
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error)
+        }
     }
+
 }
