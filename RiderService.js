@@ -12,3 +12,19 @@ const GetRiderDetailsInfoByUserIds = async(userIds) => {
 }
 
 module.exports.GetRiderDetailsInfoByUserIds = GetRiderDetailsInfoByUserIds
+
+module.exports = {
+    RiderService: {
+        createRider: async(data) => {
+            try {
+                const response = await axios.post(ServiceHost.get('user') + '/api/rider.create', {
+                    data
+                })
+
+                return response.data
+            } catch(err) {
+                throw new Error(err.data.error.message)
+            }
+        }
+    }
+}

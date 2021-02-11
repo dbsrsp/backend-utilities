@@ -1,7 +1,7 @@
 const RequestValidationMiddleware = require('./RequestValidationMiddleware')
 const ServiceHost = require('./ServiceHost')
 const { InsertActivityLog } = require('./ActivityLogService')
-const { GetRiderDetailsInfoByUserIds } = require('./RiderService')
+const { GetRiderDetailsInfoByUserIds, RiderService } = require('./RiderService')
 const { GetDriverInfoByUserIds, GetDriverDetailsByIds, getOnlineDrivers, getAllDrivers } = require('./DriverService')
 const { GetUserInfoByUserIds, userService } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
@@ -69,5 +69,6 @@ module.exports = {
     emailService,
     userService,
     dispatchService,
-    TripService
+    TripService,
+    RiderService
 }
