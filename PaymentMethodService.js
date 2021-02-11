@@ -1,4 +1,6 @@
 const ServiceHost = require('./ServiceHost')
+const axios = require('axios').default
+
 module.exports = {
     PaymentMethodService: {
         create: async({ paymentMethod, user }) => {
