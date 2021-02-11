@@ -33,7 +33,7 @@ module.exports.userService = userService = {
             throw new Error(err.data.error)
         }
     },
-    checkIfRiderEmailPhoneExists = async({ email, phone}) => {
+    checkIfRiderEmailPhoneExists: async({ email, phone}) => {
         try {
             const response = await axios.post(ServiceHost.get('user') + `/service/rider.check.if.email.phone.exists`,
             {
