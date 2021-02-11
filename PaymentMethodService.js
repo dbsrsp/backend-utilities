@@ -3,7 +3,7 @@ module.exports = {
     PaymentMethodService: {
         create: async({ paymentMethod, user }) => {
             try {
-                let response = axios.post(ServiceHost.get('payment') + '/api/paymentmethod/create', {
+                let response = await axios.post(ServiceHost.get('payment') + '/api/paymentmethod/create', {
                     data: paymentMethod,
                     user
                 })
