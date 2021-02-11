@@ -7,7 +7,7 @@ const GetRiderDetailsInfoByUserIds = async(userIds) => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.response.error.message)
+        throw new Error(err.response.data.message)
     }
 }
 
