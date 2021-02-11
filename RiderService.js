@@ -17,9 +17,7 @@ module.exports = {
     RiderService: {
         createRider: async(data) => {
             try {
-                const response = await axios.post(ServiceHost.get('user') + '/api/rider.create', {
-                    data
-                })
+                const response = await axios.post(ServiceHost.get('user') + '/api/rider.create', data)
 
                 return response.data
             } catch(err) {
