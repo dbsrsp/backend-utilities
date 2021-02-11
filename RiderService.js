@@ -11,8 +11,6 @@ const GetRiderDetailsInfoByUserIds = async(userIds) => {
     }
 }
 
-module.exports.GetRiderDetailsInfoByUserIds = GetRiderDetailsInfoByUserIds
-
 module.exports = {
     RiderService: {
         createRider: async(data) => {
@@ -24,5 +22,6 @@ module.exports = {
                 throw new Error(err.response.data.message)
             }
         }
-    }
+    },
+    GetRiderDetailsInfoByUserIds
 }
