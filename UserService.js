@@ -21,7 +21,7 @@ module.exports.userService = userService = {
     
             return response.data
         } catch(err) {
-            throw new Error(err.data.error)
+            throw new Error(err.response.data.message)
         }
     },
     getScopes: async(userId) => {
@@ -30,7 +30,7 @@ module.exports.userService = userService = {
     
             return response.data
         } catch(err) {
-            throw new Error(err.data.error)
+            throw new Error(err.response.data.message)
         }
     },
     checkIfRiderEmailPhoneExists: async({ email, phone}) => {
@@ -43,7 +43,7 @@ module.exports.userService = userService = {
     
             return response.data
         } catch(err) {
-            throw new Error(err.data.error.message)
+            throw new Error(err.response.data.message)
         }
     }
 
