@@ -13,6 +13,7 @@ const { notificationService } = require('./NotificationService')
 const { paymentService } = require('./PaymentService')
 const { emailService } = require('./emailService')
 const { dispatchService } = require('./dispatchService')
+const { PaymentMethodService } = require('./PaymentMethodService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -70,5 +71,6 @@ module.exports = {
     userService,
     dispatchService,
     TripService,
-    RiderService
+    RiderService,
+    PaymentMethodService
 }
