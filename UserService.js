@@ -32,6 +32,19 @@ module.exports.userService = userService = {
         } catch(err) {
             throw new Error(err.data.error)
         }
+    },
+    checkIfRiderEmailPhoneExists = async({ email, phone}) => {
+        try {
+            const response = await axios.post(ServiceHost.get('user') + `/service/rider.check.if.email.phone.exists`,
+            {
+                email,
+                phone
+            })
+    
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error.message)
+        }
     }
 
 }
