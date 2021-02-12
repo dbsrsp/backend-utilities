@@ -70,5 +70,16 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    checkBookingsIfPaid: async({ ids }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/bookings.check.if.paid', {
+               ids
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
