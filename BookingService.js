@@ -34,5 +34,18 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.data.error.message)
         }
+    },
+    getBookingsForInvoice: async({ portalId, dateFrom, dateEnd }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/booking.get.for.invoice', {
+                portalId,
+                dateFrom,
+                dateEnd
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
