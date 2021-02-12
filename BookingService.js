@@ -47,5 +47,28 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    checkIfValidPaymentMethodPortal: async({ portalId, paymentMethodId }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/check.if.valid.paymentmethod.portal', {
+                portalId,
+                paymentMethodId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+    markBookingsAsPaid: async({ ids }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/bookings.mark.paid', {
+               ids
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }

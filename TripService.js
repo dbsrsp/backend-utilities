@@ -51,5 +51,14 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    markBookingsAsPaid: async({ ids }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/bookings.mark.as.paid', { ids })
+            
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
