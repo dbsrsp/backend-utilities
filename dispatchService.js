@@ -28,5 +28,19 @@ module.exports.dispatchService = dispatchService = {
             console.log(err)
             throw new Error(err.data.error.message)
         }
+    },
+    checkIfDriverNearLocation: async({ driverId, lat, long }) => {
+        try {
+            const response = await axios.post(ServiceHost.get('dispatch') + '/service/check.if.driver.near.location', 
+            {
+                driverId,
+                lat,
+                long
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 } 
