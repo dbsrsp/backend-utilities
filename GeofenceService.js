@@ -36,13 +36,10 @@ const GetAllDriversQueueInStagingOfAirport = async(id) => {
     }
 }
 
-module.exports.GetGeofencePricing = GetGeofencePricing
-
-module.exports.RemoveFromQueue = RemoveFromQueue
-
-module.exports.GetAllDriversQueueInStagingOfAirport = GetAllDriversQueueInStagingOfAirport
-
 module.exports = {
+    GetGeofencePricing,
+    RemoveFromQueue,
+    GetAllDriversQueueInStagingOfAirport,
     GeofenceService: {
         getServiceAreaDetailsById: async(id) => {
             try {
