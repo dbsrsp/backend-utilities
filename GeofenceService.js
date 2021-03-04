@@ -41,3 +41,17 @@ module.exports.GetGeofencePricing = GetGeofencePricing
 module.exports.RemoveFromQueue = RemoveFromQueue
 
 module.exports.GetAllDriversQueueInStagingOfAirport = GetAllDriversQueueInStagingOfAirport
+
+module.exports = {
+    GeofenceService: {
+        getServiceAreaDetailsById: async(id) => {
+            try {
+                const response = await axios.get(ServiceHost.get('geofence') + '/service/service.area.details/' + id)
+
+                return response.data
+            } catch(err) {
+                throw new Error(err.response.data.message)
+            }
+        }
+    }
+}
