@@ -1,12 +1,13 @@
 const ServiceHost = require('./ServiceHost')
 const axios = require('axios').default
 
-const GetGeofencePricing = async(pickupLocation, dropoffLocation, brandId) => {
+const GetGeofencePricing = async(pickupLocation, dropoffLocation, brandId, serviceAreaId = null) => {
     try {
         const response = await axios.post(ServiceHost.get('geofence') + '/service/geofence.get.pricing', {
             pickUpLocation: pickupLocation,
             dropOffLocation: dropoffLocation,
-            brandId
+            brandId,
+            serviceAreaId
         })
 
         return response.data
