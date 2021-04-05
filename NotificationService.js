@@ -14,5 +14,17 @@ module.exports.notificationService = notificationService = {
         } catch(err) {
             throw new Error(err.data.error.message)
         }
+    },
+    sendSms: async({ message, phoneNumber }) => {
+        try {
+            const result = await axios.post(serviceHost.get('notification') + '/api/send.sms', {
+                message,
+                phoneNumber
+            })
+    
+            return result.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
