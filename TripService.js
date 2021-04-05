@@ -60,5 +60,17 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getNotNotifiedBookings: async({ dateFrom, dateTo }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/get.not.notified.bookings', { 
+                dateFrom,
+                dateTo
+             })
+             
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
