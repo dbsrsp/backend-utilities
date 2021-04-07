@@ -7,7 +7,7 @@ const GetDriverInfoByUserIds = async(userIds) => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error)
+        throw new Error(err.response.data.message)
     }
 }
 
@@ -20,7 +20,7 @@ const GetDriverDetailsByIds = async(ids) => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error)
+        throw new Error(err.response.data.message)
     }
 }
 
@@ -30,7 +30,7 @@ module.exports.getOnlineDrivers = getOnlineDrivers = async() => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error.message)
+        throw new Error(err.response.data.message)
     }
 }
 
@@ -44,6 +44,6 @@ module.exports.getAllDrivers = getAllDrivers = async() => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error.message)
+        throw new Error(err.response.data.message)
     }
 }
