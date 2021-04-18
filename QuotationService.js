@@ -11,4 +11,16 @@ const GetQuotationDetails = async(quotationId) => {
     }
 }
 
+module.exports.QuotationService = {
+    createByFreeCall: async(data) => {
+        try {
+            const response = await axios.post(ServiceHost.get('quotation') + '/api/qoutation/service/create.via.free.call', data)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    }
+}
+
 module.exports.GetQuotationDetails = GetQuotationDetails

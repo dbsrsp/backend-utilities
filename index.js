@@ -6,7 +6,7 @@ const { GetDriverInfoByUserIds, GetDriverDetailsByIds, getOnlineDrivers, getAllD
 const { GetUserInfoByUserIds, userService } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
 const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirport, GeofenceService } = require('./GeofenceService')
-const { GetQuotationDetails } = require('./QuotationService')
+const { GetQuotationDetails, QuotationService } = require('./QuotationService')
 const { createTripAsap, sendTrip, getTripDetails, TripService } = require('./TripService')
 const { createBookingAsap, markReadyToGo, bookingService } = require('./BookingService')
 const { notificationService } = require('./NotificationService')
@@ -75,5 +75,6 @@ module.exports = {
     RiderService,
     PaymentMethodService,
     settingsService,
-    GeofenceService
+    GeofenceService,
+    QuotationService
 }
