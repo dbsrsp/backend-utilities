@@ -3,9 +3,9 @@ const ServiceHost = require('./ServiceHost')
 
 module.exports = {
     FlightService: {
-        getFlightStatus: async({ type, fligthNumber, flightTime}) => {
+        getFlightStatus: async({ type, flightNumber, flightTime}) => {
             try {
-                const response = await axios.get(`${ServiceHost.get('flight')}/flight.status`, { data: { type, flightTime, fligthNumber }})
+                const response = await axios.get(`${ServiceHost.get('flight')}/flight.status`, { data: { type, flightTime, flightNumber }})
 
                 return response.data
             } catch(err) {
