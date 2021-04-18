@@ -116,7 +116,7 @@ module.exports.bookingService = bookingService = {
                 airportFee
              })
 
-             return response
+             return response.data
         } catch(err) {
             throw new Error(err.response.data.message)
         }

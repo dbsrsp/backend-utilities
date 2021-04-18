@@ -7,7 +7,7 @@ module.exports = {
             try {
                 const response = await axios.get(`${ServiceHost.get('flight')}/flight.status`, { data: { type, flightTime, fligthNumber }})
 
-                return response
+                return response.data
             } catch(err) {
                 throw new Error(err.response.data.message)
             }
