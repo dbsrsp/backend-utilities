@@ -81,5 +81,44 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    createByFreeCall: async({
+        quotationId,
+        pickUpLocation,
+        dropOffLocation,
+        productId,
+        riderId,
+        totalAmount,
+        tip,
+        driverTake,
+        tripId,
+        pax,
+        luggage,
+        pickUpTime,
+        paymentMethodId,
+        airportFee
+    }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/create.booking.by.freecall', {
+                quotationId,
+                pickUpLocation,
+                dropOffLocation,
+                productId,
+                riderId,
+                totalAmount,
+                tip,
+                driverTake,
+                tripId,
+                pax,
+                luggage,
+                pickUpTime,
+                paymentMethodId,
+                airportFee
+             })
+
+             return response
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
