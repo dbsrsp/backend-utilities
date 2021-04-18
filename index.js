@@ -15,6 +15,7 @@ const { emailService } = require('./emailService')
 const { dispatchService } = require('./dispatchService')
 const { PaymentMethodService } = require('./PaymentMethodService')
 const { settingsService } = require('./settingsService')
+const {  FlightService } = require('./FlightService')
 class ErrorResponse {
     code = ''
     message = ''
@@ -76,5 +77,6 @@ module.exports = {
     PaymentMethodService,
     settingsService,
     GeofenceService,
-    QuotationService
+    QuotationService,
+    FlightService
 }
