@@ -75,7 +75,7 @@ module.exports.TripService = TripService = {
     },
     updateBookingFligthTime: async(bookings) => {
         try {
-            /service/update.booking.flightTime
+
             const response = await axios.post(serviceHost.get('trip') + '/service/update.booking.flightTime', { 
                 bookings
              })
