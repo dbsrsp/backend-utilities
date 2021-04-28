@@ -122,5 +122,16 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    markbookingsonboard: async({ ids }) => {
+        try {
+           let response = await axios.post(serviceHost.get('booking') + '/service/booking.mark.on.board', {
+               ids
+             })
+
+             return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
