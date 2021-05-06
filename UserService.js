@@ -48,7 +48,7 @@ module.exports.userService = userService = {
     },
     checkifactive: async(id) => {
         try {
-            const response = await axios.get(ServiceHost.get('user') + `/user/checkifactive/${id}`)
+            const response = await axios.get(ServiceHost.get('user') + `/api/user/checkifactive/${id}`)
 
             return response.data
         } catch(err) {
