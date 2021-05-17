@@ -30,5 +30,23 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.data.error.message)
         }
+    },
+    chargeanonymous: async({ cardDetails: { cardNumber, accountName, cvc, year, month }, amount }) => {
+        try {
+            const response = await axios.post(ServiceHost.get('payment') + '/api/payment.charge.anonymous', {
+               cardDetails: {
+                   cardNumber,
+                   accountName,
+                   cvc,
+                   year,
+                   month
+               },
+               amount
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.data.error.message)
+        }
     }
 }
