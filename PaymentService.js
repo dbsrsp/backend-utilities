@@ -46,7 +46,7 @@ module.exports.paymentService = paymentService = {
 
             return response.data
         } catch(err) {
-            throw new Error(err.data.error.message)
+            throw new Error(err.response.data.message)
         }
     }
 }
