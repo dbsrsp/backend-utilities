@@ -48,5 +48,14 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    resetTrip: async(tripId) => {
+        try {
+            const response = await axios.put(ServiceHost.get('payment') + '/service/reset.driver.payout/' + tripId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
