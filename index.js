@@ -2,7 +2,7 @@ const RequestValidationMiddleware = require('./RequestValidationMiddleware')
 const ServiceHost = require('./ServiceHost')
 const { InsertActivityLog } = require('./ActivityLogService')
 const { GetRiderDetailsInfoByUserIds, RiderService } = require('./RiderService')
-const { GetDriverInfoByUserIds, GetDriverDetailsByIds, getOnlineDrivers, getAllDrivers } = require('./DriverService')
+const { GetDriverInfoByUserIds, GetDriverDetailsByIds, getOnlineDrivers, getAllDrivers, DriverService } = require('./DriverService')
 const { GetUserInfoByUserIds, userService } = require('./UserService')
 const { GetProductListByBrandId } = require('./ProductService')
 const { GetGeofencePricing, RemoveFromQueue, GetAllDriversQueueInStagingOfAirport, GeofenceService } = require('./GeofenceService')
@@ -78,5 +78,6 @@ module.exports = {
     settingsService,
     GeofenceService,
     QuotationService,
-    FlightService
+    FlightService,
+    DriverService
 }

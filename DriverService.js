@@ -47,3 +47,15 @@ module.exports.getAllDrivers = getAllDrivers = async() => {
         throw new Error(err.response.data.message)
     }
 }
+
+module.exports.DriverService = DriverService = {
+    endduty: async(userId) => {
+        try {
+            const response = await axios.post(ServiceHost.get('driver') + `/api/driver/${userId}/duty/end`, null)
+            
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    }
+}
