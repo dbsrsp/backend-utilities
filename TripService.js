@@ -96,5 +96,14 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    triphasreset: async(tripId) => {
+        try {
+            const response = await axios.get(serviceHost.get('trip') + `/api/trip/${tripId}/hasreset`)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
