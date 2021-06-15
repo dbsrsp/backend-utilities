@@ -57,5 +57,14 @@ module.exports.DriverService = DriverService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getdriverstatus: async(userId) => {
+        try {
+            const response = await axios.get(ServiceHost.get('driver') + `/api/driver.status/${userId}`)
+            
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
