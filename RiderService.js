@@ -21,6 +21,15 @@ module.exports = {
             } catch(err) {
                 throw new Error(err.response.data.message)
             }
+        },
+        generatetoken: async(id) => {
+            try {
+                const response = await axios.get(ServiceHost.get('user') + '/service/generate.token/' + id)
+
+                return response.data.result
+            } catch(err) {
+                throw new Error(err.response.data.message)
+            }
         }
     },
     GetRiderDetailsInfoByUserIds
