@@ -50,6 +50,15 @@ module.exports = {
             } catch(err) {
                 throw new Error(err.response.data.message)
             }
+        },
+        getAllSmsTemplates: async() => {
+            try {
+                const response = await axios.get(ServiceHost.get('geofence') + '/api/pricing/allsms')
+
+                return response.data
+            } catch(err) {
+                throw new Error(err.response.data.message)
+            }
         }
-    }
+    },
 }
