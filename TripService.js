@@ -105,5 +105,17 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    checkifbookingassignedtodriver: async(bookingId, driverId) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/check.if.booking.assigned.to.driver', {
+                driverId,
+                bookingId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
