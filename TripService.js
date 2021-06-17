@@ -117,5 +117,14 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    checkifbookinghasdriver: async(bookingId) => {
+        try {
+            const response = await axios.get(serviceHost.get('trip') + '/service/check.if.booking.has.driver/' + bookingId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
