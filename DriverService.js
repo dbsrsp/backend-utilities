@@ -66,5 +66,14 @@ module.exports.DriverService = DriverService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getcustomerstripe: async(driverId) => {
+        try {
+            const response = await axios.get(ServiceHost.get('driver') + `/api/driver.customer.stripe/${driverId}`)
+            
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
