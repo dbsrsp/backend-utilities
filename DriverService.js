@@ -75,5 +75,18 @@ module.exports.DriverService = DriverService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    updatedriverstripedetails: async({ driverId, stripeCustomerId, defaultDestinationAccountId }) => {
+        try {
+            const response = await axios.put(ServiceHost.get('driver')  + `/api/driver.update.stripe.details`, {
+                driverId,
+                stripeCustomerId,
+                defaultDestinationAccountId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
