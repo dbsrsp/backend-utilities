@@ -57,5 +57,14 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getalldriverpayoutaccounts: async(driverId) => {
+        try {
+            const response = await axios.get(ServiceHost.get('payment') + `/api/get.all.driver.payout.accounts/${driverId}`)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
