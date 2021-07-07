@@ -16,6 +16,7 @@ const { dispatchService } = require('./dispatchService')
 const { PaymentMethodService } = require('./PaymentMethodService')
 const { settingsService } = require('./settingsService')
 const {  FlightService } = require('./FlightService')
+const { UtilityService  } = require('./utility.service')
 class ErrorResponse {
     code = ''
     message = ''
@@ -43,6 +44,7 @@ const compareSort = (property) => {
         return comparison
     }
 }
+
 
 module.exports = {
     ErrorResponse,
@@ -79,5 +81,6 @@ module.exports = {
     GeofenceService,
     QuotationService,
     FlightService,
-    DriverService
+    DriverService,
+    UtilityService
 }
