@@ -54,6 +54,22 @@ module.exports.userService = userService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    updateuser: async({ email, phone, isDeleted, isDisabled, userId, role }) => {
+        try {
+            const response = await axios.put(ServiceHost.get('user') + '/service/update.user', {
+                email,
+                phone,
+                isDeleted,
+                isDisabled,
+                userId,
+                role
+            })
+
+            return response.data
+        } catch (err){
+            throw new Error(err.response.data.message)
+        }
     }
 
 }
