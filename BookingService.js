@@ -133,5 +133,18 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    editbookingpaiddetails: async({ bookingId, isPaid, isInvoice }) => {
+        try {
+            const response = await axios.put(serviceHost.get('booking') + '/service/edit.booking.paid.details', {
+                bookingId,
+                isPaid,
+                isInvoice
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
