@@ -146,5 +146,14 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getdriverdetailsbybookingid: async(bookingId) => {
+        try {
+            const response = await axios.get(serviceHost.get('trip') + '/service/get.driver.details.by.booking.id/' + bookingId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
