@@ -155,5 +155,17 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    updatebookingstatus: async({ bookingId, status }) => {
+        try {
+            const response = await axios.put(serviceHost.get('booking') + '/service/update.booking.status', {
+                bookingId,
+                status
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
