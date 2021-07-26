@@ -165,6 +165,41 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    //#endregion
+    //#region  booking module
+    createBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/booking.create', {
+                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+
+    updateBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic }) => {
+        try {
+            const response = await axios.put(serviceHost.get('trip') + '/service/booking.update', {
+                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+    deleteBooking: async(id) => {
+        try {
+            const response = await axios.delete(serviceHost.get('trip') + '/service/booking.delete/'+ id)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
     //#endregion
+
 }
