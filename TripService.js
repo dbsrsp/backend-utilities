@@ -149,7 +149,7 @@ module.exports.TripService = TripService = {
 
     useQuotation: async(id) => {
         try {
-            const response = await axios.put(serviceHost.get('booking') + '/service/quotation.use/' + id)
+            const response = await axios.put(serviceHost.get('trip') + '/service/quotation.use/' + id)
 
             return response.data
         } catch(err) {
@@ -159,7 +159,7 @@ module.exports.TripService = TripService = {
 
     deleteQuotation: async(id) => {
         try {
-            const response = await axios.delete(serviceHost.get('booking') + '/service/quotation.delete/' + id)
+            const response = await axios.delete(serviceHost.get('trip') + '/service/quotation.delete/' + id)
 
             return response.data
         } catch(err) {
