@@ -130,7 +130,7 @@ module.exports.TripService = TripService = {
     //#region quotation module
     createQuotation: async({ id, isUsed, pickUpLocation, dropOffLocation, routingInfo, pricing, serviceAreaId, timezone }) => {
         try {
-            const response = await axios.post(serviceHost.get('booking') + '/service/quotation.create', {
+            const response = await axios.post(serviceHost.get('trip') + '/service/quotation.create', {
                id,
                isUsed,
                pickUpLocation,
