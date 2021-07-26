@@ -199,6 +199,24 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    //#endregion
+
+    //#region trip module
+    createTrip: async({ routeInfo, pax, luggage, pickUpTime, bookingId }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/trip.create', {
+               routeInfo,
+               pax,
+               luggage,
+               pickUpTime,
+               bookingId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
     //#endregion
 
