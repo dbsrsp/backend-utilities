@@ -167,5 +167,45 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    //#region quotation module
+    createQuotation: async({ id, isUsed, pickUpLocation, dropOffLocation, routingInfo, pricing, serviceAreaId, timezone }) => {
+        try {
+            const response = await axios.post(serviceHost.get('booking') + '/service/quotation.create', {
+               id,
+               isUsed,
+               pickUpLocation,
+               dropOffLocation,
+               routingInfo,
+               pricing,
+               serviceAreaId,
+               timezone
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+
+    useQuotation: async(id) => {
+        try {
+            const response = await axios.put(serviceHost.get('booking') + '/service/quotation.use/' + id)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+
+    deleteQuotation: async(id) => {
+        try {
+            const response = await axios.delete(serviceHost.get('booking') + '/service/quotation.delete/' + id)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
+    //#endregion
 }

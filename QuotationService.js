@@ -20,6 +20,38 @@ module.exports.QuotationService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+
+    create: async({ pickup_location, dropoff_location, serviceAreaId }) => {
+        try {
+            const response = await axios.post(ServiceHost.get('quotation') + '/service/quotation.create', { pickup_location, dropoff_location, serviceAreaId })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+
+    useQuotation: async(id) => {
+        try {
+            const response = await axios.put(ServiceHost.get('quotation') + '/service/quotation.use/' + id)
+
+            return response.data
+        }
+        catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
+
+    deleteQuotation: async(id) => {
+        try {
+            const response = await axios.delete(ServiceHost.get('quotation') + '/service/quotation.delete/' + id)
+
+            return response.data
+        }
+        catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
 
