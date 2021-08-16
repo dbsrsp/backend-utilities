@@ -200,6 +200,15 @@ module.exports.TripService = TripService = {
             throw new Error(err.response.data.message)
         }
     },
+    updatestatus: async(bookingId, status) => {
+        try {
+            const response = await axios.put(serviceHost.get('trip') + '/service/booking.updatestatus', { bookingId, status })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
     //#endregion
 
     //#region trip module
