@@ -209,6 +209,15 @@ module.exports.TripService = TripService = {
             throw new Error(err.response.data.message)
         }
     },
+    cancelbooking: async(bookingId, userId) => {
+        try {
+            const response = await axios.put(serviceHost.get('trip') + '/service/booking.cancel', { bookingId, userId })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    },
     //#endregion
 
     //#region trip module
