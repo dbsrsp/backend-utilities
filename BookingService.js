@@ -206,6 +206,17 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
-    }
+    },
     //#endregion
+
+    //#region promocode module
+    getPromoCodeDetails: async(id) => {
+        try {
+            const response = await axios.get(serviceHost.get('booking') + '/service/promocode.details/' + id)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    }
 }
