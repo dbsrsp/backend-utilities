@@ -17,6 +17,7 @@ const { PaymentMethodService } = require('./PaymentMethodService')
 const { settingsService } = require('./settingsService')
 const {  FlightService } = require('./FlightService')
 const { UtilityService  } = require('./utility.service')
+const { TransactionService } = require('./transaction.service')
 class ErrorResponse {
     code = ''
     message = ''
@@ -82,5 +83,6 @@ module.exports = {
     QuotationService,
     FlightService,
     DriverService,
-    UtilityService
+    UtilityService,
+    TransactionService
 }
