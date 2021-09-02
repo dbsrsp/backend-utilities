@@ -66,5 +66,14 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    charge: async(booking) => {
+        try {
+            let response = await axios.post(ServiceHost.get('payment') + '/service/payment.charge', booking)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
