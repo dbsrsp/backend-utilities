@@ -13,7 +13,7 @@ module.exports.emailService = emailService = {
 
             return response.data
         } catch(err) {
-            throw new Error(err.data.message)
+            throw new Error(err.response.data.message)
         }
     }
 }
