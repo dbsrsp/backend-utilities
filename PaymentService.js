@@ -75,5 +75,17 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    refund: async({ payment_intent_id, amount }) => {
+        try {
+            let response = await axios.post(ServiceHost.get('payment') + '/service/payment.refund', {
+                payment_intent_id,
+                amount
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
