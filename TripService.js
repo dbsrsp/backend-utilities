@@ -235,6 +235,15 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getAllBookingByTripId: async(tripId) => {
+        try {
+            const response = await axios.get(serviceHost.get('trip') + '/service/trip.get.all.bookings/' + tripId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
     //#endregion
 
