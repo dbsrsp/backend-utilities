@@ -218,5 +218,14 @@ module.exports.bookingService = bookingService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    getBookingDetails: async(id) => {
+        try {
+            let response = await axios.get(serviceHost.get('trip') + `/api/booking/${id}/details`)
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
     }
 }
