@@ -16,5 +16,14 @@ module.exports.TransactionService = TransactionService = {
         } catch (error) {
             throw new Error(error.response.data.message)
         }
+    },
+    get_all_transactions_by_booking: async(bookingId) => {
+        try {
+            let response = await axios.get(serviceHost.get('transaction') + '/service/transaction.get.all.by.bookingId/' + bookingId)
+
+            return response.data
+        } catch(err) {
+            throw new Error(error.response.data.message)
+        }
     }
 }
