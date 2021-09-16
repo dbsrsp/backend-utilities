@@ -5,7 +5,7 @@ module.exports = {
     settingsService: {
         search: async() => {
             try {
-                const response = await axios.get(serviceHost.get('settings') + '/settings.search')
+                const response = await axios.post(serviceHost.get('settings') + '/settings.search')
 
                 return response.data
             } catch(err) {
