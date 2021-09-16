@@ -87,5 +87,14 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    get_payment_method_details_by_id: async(id) => {
+        try {
+            let response = await axios.get(ServiceHost.get('payment') + `/service/payment.method.details/${id}`)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
