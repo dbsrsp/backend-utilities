@@ -168,10 +168,10 @@ module.exports.TripService = TripService = {
     },
     //#endregion
     //#region  booking module
-    createBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride }) => {
+    createBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride }) => {
         try {
             const response = await axios.post(serviceHost.get('trip') + '/service/booking.create', {
-                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride
+                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair: hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride
             })
 
             return response.data
