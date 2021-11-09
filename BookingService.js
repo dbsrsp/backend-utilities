@@ -7,7 +7,7 @@ const createBookingAsap = async(asapDetails) => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error)
+        throw new Error(err.response.data.message)
     }
 }
 
@@ -17,7 +17,7 @@ const markReadyToGo = async(bookingId) => {
 
         return response.data
     } catch(err) {
-        throw new Error(err.data.error)
+        throw new Error(err.response.data.message)
     }
 }
 
