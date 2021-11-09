@@ -16,7 +16,7 @@ module.exports.paymentService = paymentService = {
 
             return response.data
         } catch(err) {
-            throw new Error(err.data.error.message)
+            throw new Error(err.response.data.message)
         }
     },
     createDriverPayoutSummary: async({ week, year}) => {
@@ -28,7 +28,7 @@ module.exports.paymentService = paymentService = {
 
             return response.data
         } catch(err) {
-            throw new Error(err.data.error.message)
+            throw new Error(err.response.data.message)
         }
     },
     chargeanonymous: async({ cardDetails: { cardNumber, accountName, cvc, year, month }, amount }) => {
