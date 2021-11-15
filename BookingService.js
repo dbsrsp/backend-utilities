@@ -32,7 +32,7 @@ module.exports.bookingService = bookingService = {
 
             return response.data
         } catch(err) {
-            throw new Error(err.data.error.message)
+            throw new Error(err.response.data.message)
         }
     },
     getBookingsForInvoice: async({ portalId, dateFrom, dateEnd }) => {
@@ -222,6 +222,15 @@ module.exports.bookingService = bookingService = {
     getBookingDetails: async(id) => {
         try {
             let response = await axios.get(serviceHost.get('trip') + `/api/booking/${id}/details`)
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
+    },
+    updateBookingTripId: async({ bookingIds, tripId }) => {
+        try {
+            let response = await axios.post(serviceHost.get('booking') + `/service/edit.booking.tripId`, { bookingIds, tripId })
 
             return response.data
         } catch(err) { 
