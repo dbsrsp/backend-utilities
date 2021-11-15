@@ -228,9 +228,9 @@ module.exports.bookingService = bookingService = {
             throw new Error(err.response.data.message)
         }
     },
-    updateBookingTripId: async({ bookingIds, tripId }) => {
+    updateBookingTripId: async({ bookingIds, tripId, isResetToNull }) => {
         try {
-            let response = await axios.post(serviceHost.get('booking') + `/service/edit.booking.tripId`, { bookingIds, tripId })
+            let response = await axios.post(serviceHost.get('booking') + `/service/edit.booking.tripId`, { bookingIds, tripId, isResetToNull })
 
             return response.data
         } catch(err) { 
