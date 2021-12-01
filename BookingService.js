@@ -97,6 +97,7 @@ module.exports.bookingService = bookingService = {
         pickUpTime,
         paymentMethodId,
         airportFee,
+        portalId,
         isDriverCollect
     }) => {
         try {
@@ -115,6 +116,7 @@ module.exports.bookingService = bookingService = {
                 pickUpTime,
                 paymentMethodId,
                 airportFee,
+                portalId,
                 isDriverCollect
              })
 
