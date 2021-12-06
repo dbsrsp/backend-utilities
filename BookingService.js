@@ -238,5 +238,14 @@ module.exports.bookingService = bookingService = {
         } catch(err) { 
             throw new Error(err.response.data.message)
         }
+    },
+    createWidgetEditCode: async(bookingId) => {
+        try {
+            let response = await axios.post(serviceHost.get('booking') + `/service/create.widget.code/` + bookingId, {})
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
     }
 }
