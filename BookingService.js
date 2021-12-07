@@ -98,7 +98,9 @@ module.exports.bookingService = bookingService = {
         paymentMethodId,
         airportFee,
         portalId,
-        isDriverCollect
+        isDriverCollect,
+        firstName,
+        lastName
     }) => {
         try {
             const response = await axios.post(serviceHost.get('booking') + '/service/create.booking.by.freecall', {
@@ -117,7 +119,9 @@ module.exports.bookingService = bookingService = {
                 paymentMethodId,
                 airportFee,
                 portalId,
-                isDriverCollect
+                isDriverCollect,
+                firstName,
+                lastName
              })
 
              return response.data
