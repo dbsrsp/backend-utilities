@@ -251,5 +251,14 @@ module.exports.bookingService = bookingService = {
         } catch(err) { 
             throw new Error(err.response.data.message)
         }
+    },
+    getPortalDetailsByI: async(id) => {
+        try {
+            let response = await axios.get(serviceHost.get('booking') + `/api/portal.get/` +  id)
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
     }
 }
