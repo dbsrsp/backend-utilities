@@ -30,16 +30,17 @@ module.exports = {
             } catch(err) {
                 throw new Error(err.response.data.message)
             }
+        },
+        updateRiderDetails: async({ riderId, firstName, lastName, email, phone, ada }) => {
+            try {
+                const response = await axios.put(ServiceHost.get('rider') + '/api/rider/' + riderId, { firstName, lastName, email, phone, ada })
+    
+                return response.data
+            } catch(err) {
+                throw new Error(err.response.data.message)
+            }
         }
     },
     GetRiderDetailsInfoByUserIds,
-    updateRiderDetails: async({ riderId, firstName, lastName, email, phone, ada }) => {
-        try {
-            const response = await axios.put(ServiceHost.get('rider') + '/api/rider/' + riderId, { firstName, lastName, email, phone, ada })
-
-            return response.data
-        } catch(err) {
-            throw new Error(err.response.data.message)
-        }
-    }
+    
 }
