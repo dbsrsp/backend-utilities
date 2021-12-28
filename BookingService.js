@@ -260,5 +260,14 @@ module.exports.bookingService = bookingService = {
         } catch(err) { 
             throw new Error(err.response.data.message)
         }
+    },
+    getAllBookingNotes: async(bookingId) => {
+        try {
+            let response = await axios.get(serviceHost.get('booking') + `/service/booking.notes.all/` +  bookingId)
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
     }
 }
