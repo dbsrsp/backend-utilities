@@ -96,5 +96,16 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    capturePaymentIntent: async(paymentIntentId) => {
+        try {
+            let response = await axios.post(ServiceHost.get('payment') + `/service/payment.intent.capture`, {
+                paymentIntentId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
