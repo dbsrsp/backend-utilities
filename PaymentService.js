@@ -107,5 +107,23 @@ module.exports.paymentService = paymentService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    //rider service
+    createRider: async({ userId, firstName, lastName, fullName, email, phone, brandId }) => {
+        try {
+            let response = await axios.post(ServiceHost.get('payment') + `/service/rider.create`, {
+                userId,
+                firstName,
+                lastName,
+                fullName,
+                email,
+                phone,
+                brandId
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }

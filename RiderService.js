@@ -39,6 +39,25 @@ module.exports = {
             } catch(err) {
                 throw new Error(err.response.data.message)
             }
+        },
+        createRiderV2: async({ userId, brandId, avatarUrl, email, phone, firstName, lastName, fullName, ada }) => {
+            try {
+                const response = await axios.post(ServiceHost.get('rider') + '/service/rider.create', {
+                     firstName, 
+                     lastName, 
+                     email, 
+                     phone, 
+                     ada,
+                     brandId,
+                     avatarUrl,
+                     userId,
+                     fullName 
+                    })
+    
+                return response.data
+            } catch(err) {
+                throw new Error(err.response.data.message)
+            }
         }
     },
     GetRiderDetailsInfoByUserIds,

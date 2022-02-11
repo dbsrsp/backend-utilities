@@ -244,7 +244,25 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
-    }
+    },
     //#endregion
+    createRider: async({ userId, brandId, avatarUrl, email, phone, fullName, firstName, lastName, ada  }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/rider.create', {
+                userId,
+                brandId,
+                avatarUrl,
+                email,
+                fullName,
+                phone,
+                firstName,
+                lastName,
+                ada
+            })
 
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
+    }
 }

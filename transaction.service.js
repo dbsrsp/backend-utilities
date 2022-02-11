@@ -25,5 +25,23 @@ module.exports.TransactionService = TransactionService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    createRider: async({ userId, brandId, avatarUrl, email, phone, firstName, lastName, fullName }) => {
+        try {
+            let response = await axios.post(serviceHost.get('transaction') + '/service/rider.create', {
+                userId,
+                brandId,
+                avatarUrl,
+                email,
+                phone,
+                firstName,
+                lastName,
+                fullName
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(error.response.data.message)
+        }
     }
 }

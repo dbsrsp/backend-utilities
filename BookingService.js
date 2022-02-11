@@ -269,5 +269,25 @@ module.exports.bookingService = bookingService = {
         } catch(err) { 
             throw new Error(err.response.data.message)
         }
+    },
+    // rider service
+    createRider: async({  userId, brandId, avatarUrl, email, phone, fullName, firstName, lastName, ada }) => {
+        try {
+            let response = await axios.post(serviceHost.get('booking') + `/service/rider.create`, {
+                userId,
+                brandId,
+                avatarUrl,
+                email,
+                phone,
+                fullName,
+                firstName,
+                lastName,
+                ada
+            })
+
+            return response.data
+        } catch(err) { 
+            throw new Error(err.response.data.message)
+        }
     }
 }
