@@ -89,5 +89,14 @@ module.exports.DriverService = DriverService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    deleteDriver: async(userId) => {
+        try {
+            const response = await axios.put(ServiceHost.get('driver') + `/service/driver.delete/${userId}`)
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
