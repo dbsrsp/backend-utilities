@@ -264,5 +264,27 @@ module.exports.TripService = TripService = {
         } catch(err) {
             throw new Error(err.response.data.message)
         }
+    },
+    updateDriver: async({ userId, firstName, lastName, fullName, email, phone, avatarUrl, address, accountType, isDuty, isDeleted, isDisabled }) => {
+        try {
+            const response = await axios.post(serviceHost.get('trip') + '/service/driver.update', {
+                userId,
+                firstName,
+                lastName,
+                fullName,
+                email,
+                phone,
+                avatarUrl,
+                address,
+                accountType,
+                isDuty,
+                isDeleted,
+                isDisabled
+            })
+
+            return response.data
+        } catch(err) {
+            throw new Error(err.response.data.message)
+        }
     }
 }
