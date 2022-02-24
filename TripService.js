@@ -168,10 +168,10 @@ module.exports.TripService = TripService = {
     },
     //#endregion
     //#region  booking module
-    createBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, createdOn }) => {
+    createBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, createdOn, bookedForGuest }) => {
         try {
             const response = await axios.post(serviceHost.get('trip') + '/service/booking.create', {
-                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair: hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, createdOn
+                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair: hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, createdOn, bookedForGuest
             })
 
             return response.data
@@ -180,10 +180,10 @@ module.exports.TripService = TripService = {
         }
     },
 
-    updateBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, widgetEditCode, widgetEditExpirationDate, adminTip }) => {
+    updateBooking: async({ id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, widgetEditCode, widgetEditExpirationDate, adminTip, bookedForGuest }) => {
         try {
             const response = await axios.put(serviceHost.get('trip') + '/service/booking.update', {
-                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair: hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, widgetEditCode, widgetEditExpirationDate, adminTip
+                id, quotationId, productId, pickUpLocation, dropOffLocation, riderId, status, amount, tip, driverTake, code, tripId, pax, driverNote, pickUpTime, luggageNumber, hasServiceDog, hasWheelchair: hasWheelChair, paymentMethodId, airline, flightNumber, portalId, promoCodeId, noChargeReason, isPaid, guestFullName, guestPhone, airportFee, baseFare, additionalLuggageFee, freeLuggage, flightTime, isNotified, isDriverCollect, timezone, isDomestic, guestEmail, isPriceOverride, widgetEditCode, widgetEditExpirationDate, adminTip, bookedForGuest
             })
 
             return response.data
