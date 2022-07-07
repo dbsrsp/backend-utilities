@@ -19,6 +19,6 @@
   "homepage": "https://github.com/dbsrsp/backend-utilities#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "moment": "^2.25.3"
+    "moment": "^2.29.4"
   }
 }
